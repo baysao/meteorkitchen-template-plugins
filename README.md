@@ -16,6 +16,7 @@ npm install
 ##Usage:
 ----
 ###Define component:
+Type component is "template"
 There is 4 properties:
 
 - view_template: template path absolute to doT template file. Template use syntax [[ instead default {{ and ]] instead of }}.
