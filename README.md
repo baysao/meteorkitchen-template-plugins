@@ -1,19 +1,28 @@
 # meteorkitchen-template-plugins
+===
 Meteorkitchen plugins for generate custom component by using doT template engine
 
 Plugin help generate custom code of component without create new plugin for new type of component
 
-Install: 
-```
+##Install: 
+---
+```sh
 cd $HOME/.meteor-kitchen/plugins
 git clone https://github.com/baysao/meteorkitchen-template-plugins.git template
 cd template
 npm install
 ```
 
-Using:
-- Define component:
-```
+##Usage:
+----
+###Define component:
+There is 4 properties:
+
+- view_template: template path absolute to doT template file. Template use syntax [[ instead default {{ and ]] instead of }}.
+- view_data: json files declare data apply to file in view_template
+controller_template and controller_data is the same for generate JS blaze template for VIEW
+
+```json
 {
   "name": "layoutMenu",
   "type": "template",
