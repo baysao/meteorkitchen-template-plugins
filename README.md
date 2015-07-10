@@ -1,6 +1,6 @@
 # meteorkitchen-template-plugins
 ===
-Meteorkitchen plugins for generate custom component by using doT template engine
+[Meteor Kitchen](http://www.meteorkitchen.com/)  plugins for generate custom component by using [doT](http://olado.github.io/doT/) template engine
 
 Plugin help generate custom code of component without create new plugin for new type of component
 
@@ -35,7 +35,7 @@ controller_template and controller_data is the same for generate JS blaze templa
 ```
 
 example content of /myproject/files/templates/layoutMenu.html
-```
+```html
 <template name="[[= it.name]]">
    [[= it.content]]
 </template>
