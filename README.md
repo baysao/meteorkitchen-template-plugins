@@ -21,7 +21,8 @@ There is 4 properties:
 
 - view_template: template path absolute to doT template file. Template use syntax [[ instead default {{ and ]] instead of }}.
 - view_data: json files declare data apply to file in view_template
-controller_template and controller_data is the same for generate JS blaze template for VIEW
+- controller_template: (the same as view_template)
+- controller_data: (the same as view_data)
 
 ```json
 {
