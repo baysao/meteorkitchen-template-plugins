@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/baysao/meteorkitchen-template-plugins/issues"
   },
-  "homepage": "https://github.com/baysao/meteorkitchen-template-plugins#readme"
+  "homepage": "https://github.com/baysao/meteorkitchen-template-plugins#readme",
+  "dependencies": {
+    "dot": "^1.0.3"
+  }
 }
