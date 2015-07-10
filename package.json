@@ -1,0 +1,23 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "MeteorKitchen template generate based on doT template engine",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baysao/meteorkitchen-template-plugins.git"
+  },
+  "keywords": [
+    "meteorkitchen",
+    "plugins"
+  ],
+  "author": "Vu Tran (baysao@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baysao/meteorkitchen-template-plugins/issues"
+  },
+  "homepage": "https://github.com/baysao/meteorkitchen-template-plugins#readme"
+}
