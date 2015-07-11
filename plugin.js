@@ -19,18 +19,17 @@ dots.templateSettings = {
     append: true,
     selfcontained: false
 };
+component['template_data'] =  component['template_data'] ?  component['template_data']: {};
 
 if(component['view_template']) {
     var view = loadfile(component['view_template']);
-    component['view_data'] =  component['view_data'] ?  component['view_data']: {};
-    component.html = dots.template(view)(component['view_data']);
+    component.html = dots.template(view)(component['template_data']);
 } else {
     component.html = '';
 }
 if(component['controller_template']) {
     var controller = loadfile(component['controller_template']);
-    component['controller_data'] =  component['controller_data'] ?  component['controller_data']: {};
-    component.js = dots.template(controller)(component['controller_data']);
+    component.js = dots.template(controller)(component['template_data']);
 } else {
     component.js = '';
 }
