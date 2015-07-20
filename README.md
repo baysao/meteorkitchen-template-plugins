@@ -22,7 +22,7 @@ There is 2 main properties:
 - type: "template
 - template_data: json data structure of your component
 
-In template_data JSON, you can describe *template name* and *json data* that will apply for context of template. Beside that, you can have nested array of components by define in properties.
+In template_data JSON, you can describe **template** name (template name will search in template directories) and **json data** that will apply for context of template. Beside that, you can break you component in smaller ones by using property *components*
 
 Template name will search in order and return first found. Here is the list
 ```js
