@@ -8,9 +8,10 @@ var _ = require('underscore');
 
 var env = process.env;
 var default_templates_dirs = [
-    path.join(env['HOME'], '.meteor-kitchen', 'templates', 'ui', 'bootstrap3', 'components'),
+    path.join(env['PWD']),
     path.join(env['PWD'], 'files', 'templates'),
-    path.join(env['PWD'])
+    path.join(env['HOME'], '.meteor-kitchen', 'plugins', 'template', 'ui'),
+    path.join(env['HOME'], '.meteor-kitchen', 'templates', 'ui', 'bootstrap3', 'components')
 ];
 
 var loadfile = function (file_path) {
