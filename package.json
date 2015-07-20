@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/baysao/meteorkitchen-template-plugins#readme",
   "dependencies": {
-    "dot": "^1.0.3"
+    "dot": "^1.0.3",
+    "underscore": "^1.8.3"
   }
 }
