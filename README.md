@@ -3,6 +3,7 @@
 [Meteor Kitchen](http://www.meteorkitchen.com/)  plugins for generate custom component by using [doT](http://olado.github.io/doT/) template engine
 
 Plugin help generate custom code of component without create new plugin for new type of component
+Beside that, we can create ui library and reuse it. 
 
 ##Install: 
 ---
@@ -20,7 +21,9 @@ Type component is "template"
 There is 2 main properties:
 - type: "template
 - template_data: json data structure of your component
+
 In template_data JSON, you can describe *template name* and *json data* that will apply for context of template. Beside that, you can have nested array of components by define in properties.
+
 Template name will search in order and return first found. Here is the list
 ```js
   var default_templates_dirs = [
