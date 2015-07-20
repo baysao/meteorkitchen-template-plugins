@@ -1,0 +1,32 @@
+<template name="[[= it.name]]">
+    <div id="[[= it.name]]" name="[[= it.name]]">
+        <ul class="[[= it.class]]">
+            [[~ it.items :tab:idx]]
+            <li  role="presentation" [[? idx == 0]]class="active" [[?]]>
+                <a href="#tab[[= idx]]" data-toggle="tab">
+                    [[? tab.icon_tag]]
+                        <[[= tab.icon_tag]] class="[[= tab.icon_class]]"></[[= tab.icon_tag]]>
+                    [[??]]
+                        <i class="[[= tab.icon_class]]"></i>
+                    [[?]]
+
+                    [[? tab.title]]
+                        [[= tab.title]]
+                    [[??]]
+                        Tab [[= idx]]
+                    [[?]]
+                </a>
+            </li>
+            [[~]]
+        </ul>
+        <div class="tab-content">
+            [[~ it.items :tab:idx]]
+            <div id="tab[[= idx]]" class="[[? idx == 0]]active[[?]] tab-pane">
+                [[? tab.content]]
+                    [[= tab.content]]
+                [[?]]
+            </div>
+            [[~]]
+        </div>
+    </div>
+</template>
