@@ -34,13 +34,16 @@ dots.templateSettings = {
     interpolate: /\[\[=([\s\S]+?)]]/g,
     encode: /\[\[!([\s\S]+?)]]/g,
     use: /\[\[#([\s\S]+?)]]/g,
+    useParams:   /(^|[^\w$])def(?:\.|\[[\'\"])([\w$\.]+)(?:[\'\"]\])?\s*\:\s*([\w$\.]+|\"[^\"]+\"|\'[^\']+\'|\{[^\}]+\})/g,
     define: /\[\[##\s*([\w\.$]+)\s*(:|=)([\s\S]+?)#]]/g,
+    defineParams:/^\s*([\w$]+):([\s\S]+)/,
     conditional: /\[\[\?(\?)?\s*([\s\S]*?)\s*]]/g,
     iterate: /\[\[~\s*(?:]]|([\s\S]+?)\s*:\s*([\w$]+)\s*(?::\s*([\w$]+))?\s*]])/g,
     varname: 'it',
     strip: false,
     append: true,
-    selfcontained: false
+    selfcontained: false,
+    doNotSkipEncoded: false
 };
 function processComponent(component) {
     var htmlArr = [];
@@ -48,8 +51,22 @@ function processComponent(component) {
     if(component.components) {
         component.components = _.map(component.components, function(child_component){
             var child = processComponent(child_component);
-            if(child.html) htmlArr.push(child.html);
-            if(child.js) jsArr.push(child.js);
+            if(child.fileout) {
+                var outdir = path.join(process.env['PWD'], child.fileout);
+                if (child.html) {
+                    fs.writeFile(path.join(outdir, child.name + '.html'), child.html, function (err) {
+                        if (err) return console.log(err);
+                    });
+                }
+                if (child.js) {
+                    fs.writeFile(path.join(outdir, child.name + '.js'), child.js, function (err) {
+                        if (err) return console.log(err);
+                    });
+                }
+            } else {
+                if (child.html) htmlArr.push(child.html);
+                if (child.js) jsArr.push(child.js);
+            }
             return child;
         })
     }
@@ -80,7 +97,7 @@ function processComponent(component) {
         component.html = component.html + '\n' + htmlArr.join('\n');
     }
     if(!_.isEmpty(jsArr)) {
-        component.js = component.js + '\n' + js.join('\n');
+        component.js = component.js + '\n' + jsArr.join('\n');
     }
     return component;
 };
