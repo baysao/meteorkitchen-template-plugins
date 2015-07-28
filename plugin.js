@@ -9,6 +9,7 @@ var _ = require('underscore');
 var env = process.env;
 var default_templates_dirs = [
     path.join(env['PWD']),
+    path.join(env['PWD'], 'templates'),
     path.join(env['PWD'], 'files', 'templates'),
     path.join(env['HOME'], '.meteor-kitchen', 'plugins', 'template', 'ui'),
     path.join(env['HOME'], '.meteor-kitchen', 'templates', 'ui', 'bootstrap3', 'components')
@@ -54,12 +55,12 @@ function processComponent(component) {
             if(child.fileout) {
                 var outdir = path.join(process.env['PWD'], child.fileout);
                 if (child.html) {
-                    fs.writeFile(path.join(outdir, child.name + '.html'), child.html, function (err) {
+                    fs.writeFile(path.join(outdir, child.name + '.html'), child.html, {flags: 'w'}, function (err) {
                         if (err) return console.log(err);
                     });
                 }
                 if (child.js) {
-                    fs.writeFile(path.join(outdir, child.name + '.js'), child.js, function (err) {
+                    fs.writeFile(path.join(outdir, child.name + '.js'), child.js, {flags: 'w'}, function (err) {
                         if (err) return console.log(err);
                     });
                 }
