@@ -1,0 +1,7 @@
+<template name="[[= it.name]]">
+    [[? it.buttons]]
+        [[~ it.buttons :button]]
+        <button type="button" class="btn btn-xs [[= button.class]]">[[= button.title]]</button>
+        [[~]]
+    [[?]]
+</template>

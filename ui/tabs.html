@@ -1,9 +1,9 @@
 <template name="[[= it.name]]">
     <div id="[[= it.name]]" name="[[= it.name]]">
-        <ul class="[[= it.class]]">
+        <ul [[? it.class]] class="[[= it.class]]"[[??]]nav nav-tabs[[?]] role="tablist">
             [[~ it.items :tab:idx]]
-            <li  role="presentation" [[? idx == 0]]class="active" [[?]]>
-                <a href="#tab[[= idx]]" data-toggle="tab">
+            <li role="presentation" [[? idx == 0]]class="active" [[?]]>
+                <a href="#[[= it.name]]tab[[= idx]]" data-toggle="tab">
                     [[? tab.icon_tag]]
                         <[[= tab.icon_tag]] class="[[= tab.icon_class]]"></[[= tab.icon_tag]]>
                     [[??]]
@@ -21,7 +21,7 @@
         </ul>
         <div class="tab-content">
             [[~ it.items :tab:idx]]
-            <div id="tab[[= idx]]" class="[[? idx == 0]]active[[?]] tab-pane">
+            <div id="[[= it.name]]tab[[= idx]]" class="[[? idx == 0]]active[[?]] tab-pane">
                 [[? tab.content]]
                     [[= tab.content]]
                 [[?]]
