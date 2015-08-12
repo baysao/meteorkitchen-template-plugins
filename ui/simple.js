@@ -5,7 +5,7 @@ Template['[[= it.name]]'].rendered = function(){
     [[? it.rendered]][[= it.rendered]][[?]]
 }
 Template['[[= it.name]]'].events({
-    [[? it.helpers]]
+    [[? it.events]]
             [[~ it.events :event]]
         [[= event.name]]: function(event,template){
             [[= event.code]]
@@ -16,10 +16,9 @@ Template['[[= it.name]]'].events({
 Template['[[= it.name]]'].helpers({
     [[? it.helpers]]
         [[~ it.helpers :helper]]
-            [[= helper.name]]: function([[= helper.params]]) {
+            [[= helper.name]]: function([[? helper.params]][[= helper.params]][[?]]) {
             [[= helper.code]]
             },
         [[~]]
             [[?]]
-}
 })

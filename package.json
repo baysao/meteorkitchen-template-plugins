@@ -22,6 +22,9 @@
   "homepage": "https://github.com/baysao/meteorkitchen-template-plugins#readme",
   "dependencies": {
     "dot": "^1.0.3",
-    "underscore": "^1.8.3"
+    "js-beautify": "^1.5.10",
+    "mkdirp": "^0.5.1",
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.1.1"
   }
 }
